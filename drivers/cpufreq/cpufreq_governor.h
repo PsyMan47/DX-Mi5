@@ -190,6 +190,7 @@ struct cs_dbs_tuners {
 	unsigned int ignore_nice_load;
 	unsigned int sampling_rate;
 	unsigned int sampling_down_factor;
+	unsigned int down_threshold_suspended;
 	unsigned int up_threshold;
 	unsigned int down_threshold;
 	unsigned int freq_step;
