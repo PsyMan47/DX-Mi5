@@ -1067,6 +1067,12 @@ static int tfa98xx_set_profile(struct snd_kcontrol *kcontrol,
 	int ready = 0;
 	int prof_idx;
 
+#ifdef CONFIG_SOUND_CONTROL
+	/* always use music profile */
+	if (profile == 0)
+		return 0;
+#endif
+
 	if (no_start != 0)
 		return 0;
 
