@@ -59,28 +59,6 @@ static const unsigned int tacc_mant[] = {
 		__res & __mask;						\
 	})
 
-static const struct mmc_fixup mmc_fixups[] = {
-
-	/* Disable HPI feature for Kingstone card */
-	MMC_FIXUP_EXT_CSD_REV("MMC16G", CID_MANFID_KINGSTON, CID_OEMID_ANY,
-			add_quirk, MMC_QUIRK_BROKEN_HPI, 5),
-
-	MMC_FIXUP(CID_NAME_ANY, CID_MANFID_NUMONYX_MICRON, CID_OEMID_ANY,
-		add_quirk_mmc, MMC_QUIRK_CACHE_DISABLE),
-	MMC_FIXUP("MMC16G", CID_MANFID_KINGSTON, CID_OEMID_ANY, add_quirk_mmc,
-		  MMC_QUIRK_CACHE_DISABLE),
-
-	END_FIXUP
-};
-
-#ifdef CONFIG_ASYNC_FSYNC
-static unsigned int perf_degr;
-int emmc_perf_degr(void)
-{
-	return perf_degr;
-}
-#endif
-
 /*
  * Given the decoded CSD structure, decode the raw CID to our CID structure.
  */
@@ -158,6 +136,14 @@ static const struct mmc_fixup mmc_fixups[] = {
 
 	END_FIXUP
 };
+
+#ifdef CONFIG_ASYNC_FSYNC
+static unsigned int perf_degr;
+int emmc_perf_degr(void)
+{
+	return perf_degr;
+}
+#endif
 
 /*
  * Given a 128-bit response, decode to our card CSD structure.
