@@ -26,6 +26,7 @@ obj-$(CONFIG_CPU_FREQ_GOV_ZZMOOVE)      += cpufreq_zzmoove.o
 obj-$(CONFIG_CPU_FREQ_GOV_DESPAIR)	+= cpufreq_despair.o
 obj-$(CONFIG_CPU_FREQ_GOV_IMPULSE)	+= cpufreq_impulse.o
 obj-$(CONFIG_CPU_FREQ_GOV_BIOSHOCK)	+= cpufreq_bioshock.o
+obj-$(CONFIG_CPU_FREQ_GOV_LIONHEART)    += cpufreq_lionheart.o
 obj-$(CONFIG_CPU_BOOST)			+= cpu-boost.o
 obj-$(CONFIG_CPUFREQ_DT)		+= cpufreq-dt.o
 
