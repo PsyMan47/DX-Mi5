@@ -1574,7 +1574,7 @@ static int __init cpufreq_cafactive_init(void)
 		init_rwsem(&pcpu->enable_sem);
 	}
 
-	//register_power_suspend(&cafactive_suspend);
+	register_power_suspend(&cafactive_suspend);
 
 	spin_lock_init(&speedchange_cpumask_lock);
 	mutex_init(&gov_lock);
