@@ -49,6 +49,21 @@ static int __init proc_cmdline_init(void)
 		memmove(offset_addr, &cmd[offset + i + 1], len - i - offset);
 	}
 
+   	offset_addr = strstr(cmd, "androidboot.veritymode=");
+        if (offset_addr) {
+               size_t i, len, offset;
+
+                len = strlen(cmd);
+                offset = offset_addr - cmd;
+
+                for (i = 1; i < (len - offset); i++) {
+                        if (cmd[offset + i] == ' ')
+                                break;
+                }
+
+                memmove(offset_addr, &cmd[offset + i + 1], len - i - offset);
+        }
+
 	proc_create("cmdline", 0, NULL, &cmdline_proc_fops);
 	return 0;
 }
