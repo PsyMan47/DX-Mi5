@@ -70,6 +70,10 @@ void mdss_dsi_ulps_suspend_enable(bool enable)
 }
 EXPORT_SYMBOL(mdss_dsi_ulps_suspend_enable);
 
+#ifdef CONFIG_LAZYPLUG
+extern void lazyplug_enter_lazy(bool enter, bool video);
+#endif
+
 bool display_on = true;
 
 bool is_display_on()
@@ -766,6 +770,9 @@ static int mdss_dsi_panel_on(struct mdss_panel_data *pdata)
 	//mdss_dsi_panel_apply_display_setting(pdata, 0);
 
 	display_on = true;
+#ifdef CONFIG_LAZYPLUG
+	lazyplug_enter_lazy(false, false);
+#endif
 
 	pinfo = &pdata->panel_info;
 	ctrl = container_of(pdata, struct mdss_dsi_ctrl_pdata,
@@ -874,6 +881,9 @@ static int mdss_dsi_panel_off(struct mdss_panel_data *pdata)
 	}
 
 	display_on = false;
+#ifdef CONFIG_LAZYPLUG
+	lazyplug_enter_lazy(true, false);
+#endif
 
 end:
 	pr_debug("%s:-\n", __func__);
