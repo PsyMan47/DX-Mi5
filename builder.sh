@@ -14,8 +14,8 @@ fi
 export ARCH=arm64
 export KBUILD_BUILD_USER="Psy_Man"
 export KBUILD_BUILD_HOST="PsyBuntu"
-export CROSS_COMPILE=/home/psybuntu/toolchain/aarch64-linux-android-6.x/bin/aarch64-linux-android-
-export LD_LIBRARY_PATH=/home/psybuntu/toolchain/aarch64-linux-android-6.x/lib/
+export CROSS_COMPILE=/home/psybuntu/toolchain/aarch64-linux-android-5.3/bin/aarch64-linux-android-
+export LD_LIBRARY_PATH=/home/psybuntu/toolchain/aarch64-linux-android-5.3/lib/
 export USE_CCACHE=1
 export CCACHE_DIR=/home/psybuntu/DragonXia-OC/.ccache
 
