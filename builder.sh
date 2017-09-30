@@ -21,7 +21,7 @@ export CCACHE_DIR=/home/psybuntu/DragonXia-OC/.ccache
 
 make clean && make mrproper
 make scorpio_defconfig
-make -j9
+make -j3
 
 ./dtbTool -s 2048 -o arch/arm64/boot/dt.img -p scripts/dtc/ arch/arm/boot/dts/qcom/
 cp $KERNEL_DIR/arch/arm64/boot/dt.img $ANYKERNEL_DIR/dtb
