@@ -4,7 +4,7 @@ DTBTOOL=$KERNEL_DIR/dtbTool
 DATE=$(date +"%d%m%Y")
 KERNEL_NAME="Psychedelic-Kernel"
 DEVICE="-scorpio-"
-VER="-v1.0"
+VER="-v0.1"
 FINAL_ZIP="$KERNEL_NAME""$DEVICE""$DATE""$VER".zip
 
 if [ -f "$FINAL_ZIP" ]; then
@@ -27,6 +27,11 @@ make -j3
 cp $KERNEL_DIR/arch/arm64/boot/dt.img $ANYKERNEL_DIR/dtb
 cp $KERNEL_DIR/arch/arm64/boot/Image.gz $ANYKERNEL_DIR/zImage
 cp $KERNEL_DIR/drivers/staging/qcacld-2.0/wlan.ko $ANYKERNEL_DIR/
+cp $KERNEL_DIR/drivers/char/hw_random/msm_rng.ko $ANYKERNEL_DIR/
+cp $KERNEL_DIR/drivers/char/hw_random/rng-core.ko $ANYKERNEL_DIR/
+cp $KERNEL_DIR/drivers/char/rdbg.ko $ANYKERNEL_DIR/
+cp $KERNEL_DIR/drivers/spi/spidev.ko $ANYKERNEL_DIR/
+cp $KERNEL_DIR/drivers/input/evbug.ko $ANYKERNEL_DIR/
 
 cd $ANYKERNEL_DIR
 zip -r9 $FINAL_ZIP * -x README.md $FINAL_ZIP
