@@ -7,7 +7,7 @@ DEVICE="-capricorn-"
 VER="-v0.2"
 FINAL_ZIP="$KERNEL_NAME""$DEVICE""$DATE""$VER".zip
 
-rm -rf $ANYKERNEL_DIR/scorpio/*.ko && rm $ANYKERNEL_DIR/scorpio/zImage $ANYKERNEL_DIR/scorpio/dtb
+rm -rf $ANYKERNEL_DIR/capricorn/*.ko && rm $ANYKERNEL_DIR/capricorn/zImage $ANYKERNEL_DIR/capricorn/dtb
 rm $KERNEL_DIR/arch/arm64/boot/Image.gz $KERNEL_DIR/arch/arm64/boot/dt.img $KERNEL_DIR/arch/arm64/boot/Image.gz-dtb
 
 export ARCH=arm64
