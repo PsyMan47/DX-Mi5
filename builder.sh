@@ -19,7 +19,7 @@ while true; do
     "2" "MI5s Plus" \
     "3" "MI Mix" \
     "4" "MI Note 2" \
-    "4" "MI 5" \
+    "5" "MI 5" \
     2>&1 1>&3)
   exit_status=$?
   exec 3>&-
