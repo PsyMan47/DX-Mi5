@@ -20,7 +20,7 @@ export USE_CCACHE=1
 export CCACHE_DIR=/home/psybuntu/DragonXia-OC-LOS/CCACHES/scorpio/.ccache
 
 make clean && make mrproper
-make scorpio1_defconfig
+make scorpio_defconfig
 make -j3
 
 ./dtbTool -s 2048 -o arch/arm64/boot/dt.img -p scripts/dtc/ arch/arm/boot/dts/qcom/
