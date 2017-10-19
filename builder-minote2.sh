@@ -4,7 +4,7 @@ DTBTOOL=$KERNEL_DIR/dtbTool
 DATE=$(date +"%d%m%Y")
 KERNEL_NAME="Psychedelic-Kernel"
 DEVICE="-scorpio-"
-VER="-v0.3-"
+VER="-v0.4-"
 TYPE="CM"
 FINAL_ZIP="$KERNEL_NAME""$DEVICE""$DATE""$VER""$TYPE".zip
 
