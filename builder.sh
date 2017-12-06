@@ -57,14 +57,14 @@ rm $KERNEL_DIR/arch/arm64/boot/Image.gz $KERNEL_DIR/arch/arm64/boot/dt.img $KERN
 export ARCH=arm64
 export KBUILD_BUILD_USER="Psy_Man"
 export KBUILD_BUILD_HOST="PsyBuntu"
-export CROSS_COMPILE=/home/develop/toolchain/aarch64-linux-android-5.3/bin/aarch64-linux-android-
-export LD_LIBRARY_PATH=/home/develop/toolchain/aarch64-linux-android-5.3/lib/
+export CROSS_COMPILE=/home/$USER/toolchain/aarch64-linux-android-5.3/bin/aarch64-linux-android-
+export LD_LIBRARY_PATH=/home/$USER/toolchain/aarch64-linux-android-5.3/lib/
 export USE_CCACHE=1
-export CCACHE_DIR=/home/develop/P.K.-MIUI/CCACHES/capricorn/.ccache
+export CCACHE_DIR=/home/$USER/P.K.-MIUI/CCACHES/capricorn/.ccache
 
 make clean && make mrproper
 make capricorn_defconfig
-make -j8
+make -j$( nproc --all )
 
 ./dtbTool -s 2048 -o arch/arm64/boot/dt.img -p scripts/dtc/ arch/arm/boot/dts/qcom/
 cp $KERNEL_DIR/arch/arm64/boot/dt.img $ANYKERNEL_DIR/capricorn/dtb
@@ -100,14 +100,14 @@ rm $KERNEL_DIR/arch/arm64/boot/Image.gz $KERNEL_DIR/arch/arm64/boot/dt.img $KERN
 export ARCH=arm64
 export KBUILD_BUILD_USER="Psy_Man"
 export KBUILD_BUILD_HOST="PsyBuntu"
-export CROSS_COMPILE=/home/develop/toolchain/aarch64-linux-android-5.3/bin/aarch64-linux-android-
-export LD_LIBRARY_PATH=/home/develop/toolchain/aarch64-linux-android-5.3/lib/
+export CROSS_COMPILE=/home/$USER/toolchain/aarch64-linux-android-5.3/bin/aarch64-linux-android-
+export LD_LIBRARY_PATH=/home/$USER/toolchain/aarch64-linux-android-5.3/lib/
 export USE_CCACHE=1
-export CCACHE_DIR=/home/develop/P.K.-MIUI/CCACHES/natrium/.ccache
+export CCACHE_DIR=/home/$USER/P.K.-MIUI/CCACHES/natrium/.ccache
 
 make clean && make mrproper
 make natrium_defconfig
-make -j8
+make -j$( nproc --all )
 
 ./dtbTool -s 2048 -o arch/arm64/boot/dt.img -p scripts/dtc/ arch/arm/boot/dts/qcom/
 cp $KERNEL_DIR/arch/arm64/boot/dt.img $ANYKERNEL_DIR/natrium/dtb
@@ -143,14 +143,14 @@ rm $KERNEL_DIR/arch/arm64/boot/Image.gz $KERNEL_DIR/arch/arm64/boot/dt.img $KERN
 export ARCH=arm64
 export KBUILD_BUILD_USER="Psy_Man"
 export KBUILD_BUILD_HOST="PsyBuntu"
-export CROSS_COMPILE=/home/develop/toolchain/aarch64-linux-android-5.3/bin/aarch64-linux-android-
-export LD_LIBRARY_PATH=/home/develop/toolchain/aarch64-linux-android-5.3/lib/
+export CROSS_COMPILE=/home/$USER/toolchain/aarch64-linux-android-5.3/bin/aarch64-linux-android-
+export LD_LIBRARY_PATH=/home/$USER/toolchain/aarch64-linux-android-5.3/lib/
 export USE_CCACHE=1
-export CCACHE_DIR=/home/develop/P.K.-MIUI/CCACHES/lithium/.ccache
+export CCACHE_DIR=/home/$USER/P.K.-MIUI/CCACHES/lithium/.ccache
 
 make clean && make mrproper
 make lithium_defconfig
-make -j8
+make -j$( nproc --all )
 
 ./dtbTool -s 2048 -o arch/arm64/boot/dt.img -p scripts/dtc/ arch/arm/boot/dts/qcom/
 cp $KERNEL_DIR/arch/arm64/boot/dt.img $ANYKERNEL_DIR/lithium/dtb
@@ -186,14 +186,14 @@ rm $KERNEL_DIR/arch/arm64/boot/Image.gz $KERNEL_DIR/arch/arm64/boot/dt.img $KERN
 export ARCH=arm64
 export KBUILD_BUILD_USER="Psy_Man"
 export KBUILD_BUILD_HOST="PsyBuntu"
-export CROSS_COMPILE=/home/develop/toolchain/aarch64-linux-android-5.3/bin/aarch64-linux-android-
-export LD_LIBRARY_PATH=/home/develop/toolchain/aarch64-linux-android-5.3/lib/
+export CROSS_COMPILE=/home/$USER/toolchain/aarch64-linux-android-5.3/bin/aarch64-linux-android-
+export LD_LIBRARY_PATH=/home/$USER/toolchain/aarch64-linux-android-5.3/lib/
 export USE_CCACHE=1
-export CCACHE_DIR=/home/develop/P.K.-MIUI/CCACHES/scorpio/.ccache
+export CCACHE_DIR=/home/$USER/P.K.-MIUI/CCACHES/scorpio/.ccache
 
 make clean && make mrproper
 make scorpio_defconfig
-make -j8
+make -j$( nproc --all )
 
 ./dtbTool -s 2048 -o arch/arm64/boot/dt.img -p scripts/dtc/ arch/arm/boot/dts/qcom/
 cp $KERNEL_DIR/arch/arm64/boot/dt.img $ANYKERNEL_DIR/scorpio/dtb
@@ -229,14 +229,14 @@ rm $KERNEL_DIR/arch/arm64/boot/Image.gz $KERNEL_DIR/arch/arm64/boot/dt.img $KERN
 export ARCH=arm64
 export KBUILD_BUILD_USER="Psy_Man"
 export KBUILD_BUILD_HOST="PsyBuntu"
-export CROSS_COMPILE=/home/develop/toolchain/aarch64-linux-android-5.3/bin/aarch64-linux-android-
-export LD_LIBRARY_PATH=/home/develop/toolchain/aarch64-linux-android-5.3/lib/
+export CROSS_COMPILE=/home/$USER/toolchain/aarch64-linux-android-5.3/bin/aarch64-linux-android-
+export LD_LIBRARY_PATH=/home/$USER/toolchain/aarch64-linux-android-5.3/lib/
 export USE_CCACHE=1
-export CCACHE_DIR=/home/develop/P.K.-MIUI/CCACHES/gemini/.ccache
+export CCACHE_DIR=/home/$USER/P.K.-MIUI/CCACHES/gemini/.ccache
 
 make clean && make mrproper
 make gemini_defconfig
-make -j8
+make -j$( nproc --all )
 
 ./dtbTool -s 2048 -o arch/arm64/boot/dt.img -p scripts/dtc/ arch/arm/boot/dts/qcom/
 cp $KERNEL_DIR/arch/arm64/boot/dt.img $ANYKERNEL_DIR/gemini/dtb
