@@ -109,14 +109,14 @@ fi;
 ui_print " ";
 ui_print "Pushing modules...";
 mount -o rw,remount -t auto /system;
-rm -f $root/system/lib/modules/wlan.ko;
-rm -f $root/system/lib/modules/qca_cld/qca_cld_wlan.ko
-cp -f /tmp/anykernel/wlan.ko $root/system/lib/modules/qca_cld/qca_cld_wlan.ko;
+rm -f /system/lib/modules/wlan.ko;
+rm -f /system/lib/modules/qca_cld/qca_cld_wlan.ko
+cp -f /tmp/anykernel/wlan.ko /system/lib/modules/qca_cld/qca_cld_wlan.ko;
 rm -f /tmp/anykernel/wlan.ko
-ln -sf $root/system/lib/modules/qca_cld/qca_cld_wlan.ko $root/system/lib/modules/wlan.ko
-cp -f /tmp/anykernel/*.ko $root/system/lib/modules/;
-set_perm_recursive 0 0 0755 0644 $root/system/lib/modules;
-chcon -R 'u:object_r:system_file:s0' $root/system/lib/modules;
+ln -sf /system/lib/modules/qca_cld/qca_cld_wlan.ko /system/lib/modules/wlan.ko
+cp -f /tmp/anykernel/*.ko /system/lib/modules/;
+set_perm_recursive 0 0 0755 0644 /system/lib/modules;
+chcon -R 'u:object_r:system_file:s0' /system/lib/modules;
 mount -o ro,remount -t auto /system;
 sleep 1;
 
