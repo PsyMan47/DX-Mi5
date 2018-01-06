@@ -6,7 +6,7 @@ TOOLCHAINDIR=~/toolchain/aarch64-linux-android-5.3
 DATE=$(date +"%d%m%Y")
 KERNEL_NAME="Psychedelic-Kernel"
 DEVICE="-scorpio-"
-VER="-v0.6-"
+VER="-v0.7-"
 TYPE="MIUI"
 FINAL_ZIP="$KERNEL_NAME""$DEVICE""$DATE""$VER""$TYPE".zip
 
