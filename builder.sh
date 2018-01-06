@@ -19,7 +19,7 @@ while true; do
     "2" "MI5s Plus" \
     "3" "MI Mix" \
     "4" "MI Note 2" \
-    "5" "MI 5" \
+    "5" "MI 5"
     2>&1 1>&3)
   exit_status=$?
   exec 3>&-
@@ -42,25 +42,35 @@ while true; do
       ;;
     1 )
       KERNEL_DIR=$PWD
-ANYKERNEL_DIR=../AnyKernel2
+ANYKERNEL_DIR=$KERNEL_DIR/AnyKernel2
 DTBTOOL=$KERNEL_DIR/dtbTool
+CCACHEDIR=../CCACHE/capricorn
+TOOLCHAINDIR=~/toolchain/aarch64-linux-android-5.3
 DATE=$(date +"%d%m%Y")
 KERNEL_NAME="Psychedelic-Kernel"
 DEVICE="-capricorn-"
-VER="-v0.6-"
+VER="-v0.7-"
 TYPE="CM"
 FINAL_ZIP="$KERNEL_NAME""$DEVICE""$DATE""$VER""$TYPE".zip
 
 rm $ANYKERNEL_DIR/capricorn/zImage $ANYKERNEL_DIR/capricorn/dtb
 rm $KERNEL_DIR/arch/arm64/boot/Image.gz $KERNEL_DIR/arch/arm64/boot/dt.img $KERNEL_DIR/arch/arm64/boot/Image.gz-dtb
 
+if [ ! -d "$TOOLCHAINDIR" ]; then
+  mkdir ~/toolchain
+  wget https://bitbucket.org/UBERTC/aarch64-linux-android-5.3-kernel/get/1144fd2773c1.zip -P ~/toolchain
+  unzip ~/toolchain/1144fd2773c1.zip -d ~/toolchain
+  mv ~/toolchain/UBERTC-aarch64-linux-android-5.3-kernel-1144fd2773c1 ~/toolchain/aarch64-linux-android-5.3
+  rm ~/toolchain/1144fd2773c1.zip
+fi
+
 export ARCH=arm64
 export KBUILD_BUILD_USER="Psy_Man"
 export KBUILD_BUILD_HOST="PsyBuntu"
-export CROSS_COMPILE=/home/$USER/toolchain/aarch64-linux-android-5.3/bin/aarch64-linux-android-
-export LD_LIBRARY_PATH=/home/$USER/toolchain/aarch64-linux-android-5.3/lib/
+export CROSS_COMPILE=$TOOLCHAINDIR/bin/aarch64-linux-android-
+export LD_LIBRARY_PATH=$TOOLCHAINDIR/lib/
 export USE_CCACHE=1
-export CCACHE_DIR=/home/$USER/P.K.-LOS-LOS/CCACHES/capricorn/.ccache
+export CCACHE_DIR=$CCACHEDIR/.ccache
 
 make clean && make mrproper
 make capricorn_defconfig
@@ -74,25 +84,35 @@ zip -r9 $FINAL_ZIP * -x *.zip $FINAL_ZIP
       ;;
     2 )
       KERNEL_DIR=$PWD
-ANYKERNEL_DIR=../AnyKernel2
+ANYKERNEL_DIR=$KERNEL_DIR/AnyKernel2
 DTBTOOL=$KERNEL_DIR/dtbTool
+CCACHEDIR=../CCACHE/natrium
+TOOLCHAINDIR=~/toolchain/aarch64-linux-android-5.3
 DATE=$(date +"%d%m%Y")
 KERNEL_NAME="Psychedelic-Kernel"
 DEVICE="-natrium-"
-VER="-v0.6-"
+VER="-v0.7-"
 TYPE="CM"
 FINAL_ZIP="$KERNEL_NAME""$DEVICE""$DATE""$VER""$TYPE".zip
 
 rm $ANYKERNEL_DIR/natrium/zImage $ANYKERNEL_DIR/natrium/dtb
 rm $KERNEL_DIR/arch/arm64/boot/Image.gz $KERNEL_DIR/arch/arm64/boot/dt.img $KERNEL_DIR/arch/arm64/boot/Image.gz-dtb
 
+if [ ! -d "$TOOLCHAINDIR" ]; then
+  mkdir ~/toolchain
+  wget https://bitbucket.org/UBERTC/aarch64-linux-android-5.3-kernel/get/1144fd2773c1.zip -P ~/toolchain
+  unzip ~/toolchain/1144fd2773c1.zip -d ~/toolchain
+  mv ~/toolchain/UBERTC-aarch64-linux-android-5.3-kernel-1144fd2773c1 ~/toolchain/aarch64-linux-android-5.3
+  rm ~/toolchain/1144fd2773c1.zip
+fi
+
 export ARCH=arm64
 export KBUILD_BUILD_USER="Psy_Man"
 export KBUILD_BUILD_HOST="PsyBuntu"
-export CROSS_COMPILE=/home/$USER/toolchain/aarch64-linux-android-5.3/bin/aarch64-linux-android-
-export LD_LIBRARY_PATH=/home/$USER/toolchain/aarch64-linux-android-5.3/lib/
+export CROSS_COMPILE=$TOOLCHAINDIR/bin/aarch64-linux-android-
+export LD_LIBRARY_PATH=$TOOLCHAINDIR/lib/
 export USE_CCACHE=1
-export CCACHE_DIR=/home/$USER/P.K.-LOS-LOS/CCACHES/natrium/.ccache
+export CCACHE_DIR=$CCACHEDIR/.ccache
 
 make clean && make mrproper
 make natrium_defconfig
@@ -106,25 +126,35 @@ zip -r9 $FINAL_ZIP * -x *.zip $FINAL_ZIP
       ;;
     3 )
 KERNEL_DIR=$PWD
-ANYKERNEL_DIR=../AnyKernel2
+ANYKERNEL_DIR=$KERNEL_DIR/AnyKernel2
 DTBTOOL=$KERNEL_DIR/dtbTool
+CCACHEDIR=../CCACHE/lithium
+TOOLCHAINDIR=~/toolchain/aarch64-linux-android-5.3
 DATE=$(date +"%d%m%Y")
 KERNEL_NAME="Psychedelic-Kernel"
 DEVICE="-lithium-"
-VER="-v0.6-"
+VER="-v0.7-"
 TYPE="CM"
 FINAL_ZIP="$KERNEL_NAME""$DEVICE""$DATE""$VER""$TYPE".zip
 
 rm $ANYKERNEL_DIR/lithium/zImage $ANYKERNEL_DIR/lithium/dtb
 rm $KERNEL_DIR/arch/arm64/boot/Image.gz $KERNEL_DIR/arch/arm64/boot/dt.img $KERNEL_DIR/arch/arm64/boot/Image.gz-dtb
 
+if [ ! -d "$TOOLCHAINDIR" ]; then
+  mkdir ~/toolchain
+  wget https://bitbucket.org/UBERTC/aarch64-linux-android-5.3-kernel/get/1144fd2773c1.zip -P ~/toolchain
+  unzip ~/toolchain/1144fd2773c1.zip -d ~/toolchain
+  mv ~/toolchain/UBERTC-aarch64-linux-android-5.3-kernel-1144fd2773c1 ~/toolchain/aarch64-linux-android-5.3
+  rm ~/toolchain/1144fd2773c1.zip
+fi
+
 export ARCH=arm64
 export KBUILD_BUILD_USER="Psy_Man"
 export KBUILD_BUILD_HOST="PsyBuntu"
-export CROSS_COMPILE=/home/$USER/toolchain/aarch64-linux-android-5.3/bin/aarch64-linux-android-
-export LD_LIBRARY_PATH=/home/$USER/toolchain/aarch64-linux-android-5.3/lib/
+export CROSS_COMPILE=$TOOLCHAINDIR/bin/aarch64-linux-android-
+export LD_LIBRARY_PATH=$TOOLCHAINDIR/lib/
 export USE_CCACHE=1
-export CCACHE_DIR=/home/$USER/P.K.-LOS-LOS/CCACHES/lithium/.ccache
+export CCACHE_DIR=$CCACHEDIR/.ccache
 
 make clean && make mrproper
 make lithium_defconfig
@@ -138,25 +168,35 @@ zip -r9 $FINAL_ZIP * -x *.zip $FINAL_ZIP
       ;;
     4 )
 KERNEL_DIR=$PWD
-ANYKERNEL_DIR=../AnyKernel2
+ANYKERNEL_DIR=$KERNEL_DIR/AnyKernel2
 DTBTOOL=$KERNEL_DIR/dtbTool
+CCACHEDIR=../CCACHE/scorpio
+TOOLCHAINDIR=~/toolchain/aarch64-linux-android-5.3
 DATE=$(date +"%d%m%Y")
 KERNEL_NAME="Psychedelic-Kernel"
 DEVICE="-scorpio-"
-VER="-v0.6-"
+VER="-v0.7-"
 TYPE="CM"
 FINAL_ZIP="$KERNEL_NAME""$DEVICE""$DATE""$VER""$TYPE".zip
 
 rm $ANYKERNEL_DIR/scorpio/zImage $ANYKERNEL_DIR/scorpio/dtb
 rm $KERNEL_DIR/arch/arm64/boot/Image.gz $KERNEL_DIR/arch/arm64/boot/dt.img $KERNEL_DIR/arch/arm64/boot/Image.gz-dtb
 
+if [ ! -d "$TOOLCHAINDIR" ]; then
+  mkdir ~/toolchain
+  wget https://bitbucket.org/UBERTC/aarch64-linux-android-5.3-kernel/get/1144fd2773c1.zip -P ~/toolchain
+  unzip ~/toolchain/1144fd2773c1.zip -d ~/toolchain
+  mv ~/toolchain/UBERTC-aarch64-linux-android-5.3-kernel-1144fd2773c1 ~/toolchain/aarch64-linux-android-5.3
+  rm ~/toolchain/1144fd2773c1.zip
+fi
+
 export ARCH=arm64
 export KBUILD_BUILD_USER="Psy_Man"
 export KBUILD_BUILD_HOST="PsyBuntu"
-export CROSS_COMPILE=/home/$USER/toolchain/aarch64-linux-android-5.3/bin/aarch64-linux-android-
-export LD_LIBRARY_PATH=/home/$USER/toolchain/aarch64-linux-android-5.3/lib/
+export CROSS_COMPILE=$TOOLCHAINDIR/bin/aarch64-linux-android-
+export LD_LIBRARY_PATH=$TOOLCHAINDIR/lib/
 export USE_CCACHE=1
-export CCACHE_DIR=/home/$USER/P.K.-LOS-LOS/CCACHES/scorpio/.ccache
+export CCACHE_DIR=$CCACHEDIR/.ccache
 
 make clean && make mrproper
 make scorpio_defconfig
@@ -170,25 +210,35 @@ zip -r9 $FINAL_ZIP * -x *.zip $FINAL_ZIP
       ;;
     5 )
 KERNEL_DIR=$PWD
-ANYKERNEL_DIR=../AnyKernel2
+ANYKERNEL_DIR=$KERNEL_DIR/AnyKernel2
 DTBTOOL=$KERNEL_DIR/dtbTool
+CCACHEDIR=../CCACHE/gemini
+TOOLCHAINDIR=~/toolchain/aarch64-linux-android-5.3
 DATE=$(date +"%d%m%Y")
 KERNEL_NAME="Psychedelic-Kernel"
 DEVICE="-gemini-"
-VER="-v0.6-"
+VER="-v0.7-"
 TYPE="CM"
 FINAL_ZIP="$KERNEL_NAME""$DEVICE""$DATE""$VER""$TYPE".zip
 
 rm $ANYKERNEL_DIR/gemini/zImage $ANYKERNEL_DIR/gemini/dtb
 rm $KERNEL_DIR/arch/arm64/boot/Image.gz $KERNEL_DIR/arch/arm64/boot/dt.img $KERNEL_DIR/arch/arm64/boot/Image.gz-dtb
 
+if [ ! -d "$TOOLCHAINDIR" ]; then
+  mkdir ~/toolchain
+  wget https://bitbucket.org/UBERTC/aarch64-linux-android-5.3-kernel/get/1144fd2773c1.zip -P ~/toolchain
+  unzip ~/toolchain/1144fd2773c1.zip -d ~/toolchain
+  mv ~/toolchain/UBERTC-aarch64-linux-android-5.3-kernel-1144fd2773c1 ~/toolchain/aarch64-linux-android-5.3
+  rm ~/toolchain/1144fd2773c1.zip
+fi
+
 export ARCH=arm64
 export KBUILD_BUILD_USER="Psy_Man"
 export KBUILD_BUILD_HOST="PsyBuntu"
-export CROSS_COMPILE=/home/$USER/toolchain/aarch64-linux-android-5.3/bin/aarch64-linux-android-
-export LD_LIBRARY_PATH=/home/$USER/toolchain/aarch64-linux-android-5.3/lib/
+export CROSS_COMPILE=$TOOLCHAINDIR/bin/aarch64-linux-android-
+export LD_LIBRARY_PATH=$TOOLCHAINDIR/lib/
 export USE_CCACHE=1
-export CCACHE_DIR=/home/$USER/P.K.-LOS-LOS/CCACHES/gemini/.ccache
+export CCACHE_DIR=$CCACHEDIR/.ccache
 
 make clean && make mrproper
 make gemini_defconfig

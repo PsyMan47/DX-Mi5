@@ -2,10 +2,11 @@ KERNEL_DIR=$PWD
 ANYKERNEL_DIR=$KERNEL_DIR/AnyKernel2
 DTBTOOL=$KERNEL_DIR/dtbTool
 CCACHEDIR=../CCACHE/lithium
+TOOLCHAINDIR=~/toolchain/aarch64-linux-android-5.3
 DATE=$(date +"%d%m%Y")
 KERNEL_NAME="Psychedelic-Kernel"
 DEVICE="-lithium-"
-VER="-v0.6-"
+VER="-v0.7-"
 TYPE="CM"
 FINAL_ZIP="$KERNEL_NAME""$DEVICE""$DATE""$VER""$TYPE".zip
 
