@@ -273,9 +273,6 @@ int async_fsync(struct file *file, int fd)
         if ((sb->fsync_flags & FLAG_ASYNC_FSYNC) == 0)
                 return 0;
 
-        if (!emmc_perf_degr())
-                return 0;
-
         if (fd_statfs(fd, &st))
                 return 0;
 
